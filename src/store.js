@@ -109,7 +109,7 @@ console.log(store.getState());
 store.dispatch(createCustomer("Prakash", "1234567890"));
 console.log(store.getState());
 
-store.dispatch(updateCustomerName("Prakash K"));
+store.dispatch(updateCustomerName("Prakash Kittappa"));
 console.log(store.getState());
 
 store.dispatch(deposit(5000));
