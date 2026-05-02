@@ -21,7 +21,7 @@ function AccountOperations() {
     if (!depositAmount) return;
     dispatch(deposit(depositAmount, currency));
     setDepositAmount("");
-    setCurrency("");
+    setCurrency("USD");
   }
 
   function handleWithdrawal() {
@@ -31,8 +31,8 @@ function AccountOperations() {
   }
 
   function handleRequestLoan() {
-    if (!loanAmount || !loanPurpose)
-      dispatch(requestLoan(loanAmount, loanPurpose));
+    if (!loanAmount || !loanPurpose) return;
+    dispatch(requestLoan(loanAmount, loanPurpose));
     setLoanAmount("");
     setLoanPurpose("");
   }
