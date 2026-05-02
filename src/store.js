@@ -1,13 +1,14 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import reducerAccount from "./features/accounts/accountSlice";
 import reducerCustomer from "./features/customers/customerSlice";
+import { thunk } from "redux-thunk";
 
 const rootReducer = combineReducers({
   account: reducerAccount,
   customer: reducerCustomer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // store.dispatch({ type: "account/withdraw", payload: 200 });
 // console.log(store.getState());
