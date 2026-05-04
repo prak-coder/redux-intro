@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+🏦 The React-Redux Bank ⚛️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple banking application built using React and Redux Toolkit to demonstrate modern state management concepts like slices, reducers, and async logic.
 
-## Available Scripts
+<a href='https://redux-intro-1.vercel.app/'>Live Demo</a>
 
-In the project directory, you can run:
+🚀 Features
+Create a new customer
+Manage account operations:
+Deposit money
+Withdraw money
+Request a loan
+Currency conversion (USD → EUR, INR, GBP) using an API
+Global state management with Redux Toolkit
+🧠 Tech Stack
+React
+Redux Toolkit
+React-Redux
+JavaScript (ES6+)
+External API for currency conversion
+🧩 Redux Toolkit Implementation
 
-### `npm start`
+This project uses Redux Toolkit to simplify state management.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Customer Slice
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Handles customer-related data.
 
-### `npm test`
+State includes:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+fullName
+nationalID
+created (boolean)
 
-### `npm run build`
+Actions:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+createCustomer → Stores customer details
+2. Account Slice
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Handles all banking operations.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+State includes:
 
-### `npm run eject`
+balance
+loan
+loanPurpose
+isLoading (for async operations)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Actions:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+deposit → Adds money to balance
+withdraw → Deducts money
+requestLoan → Creates a loan (if no active loan)
+payLoan → Clears loan
+Async deposit with currency conversion
+🌐 Currency Conversion
+When depositing money in a foreign currency, the app:
+Calls an API
+Converts the amount to USD
+Updates the balance
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Supported currencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+USD
+EUR
+INR
+GBP
+🖥️ Application Screens
+🧾 First Screen – Create Customer
+🏦 The React-Redux Bank ⚛️
 
-## Learn More
+Create new customer
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Customer full name
+National ID
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[ Create new customer ]
+User enters name and national ID
+On submission → stored in Redux store
+Navigates to account screen
+💳 Second Screen – Account Dashboard
+🏦 The React-Redux Bank ⚛️
 
-### Code Splitting
+👋 Welcome, Prak
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Your account operations
 
-### Analyzing the Bundle Size
+Deposit
+[ Amount ] [ Currency ]
+[ Deposit ]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Withdraw
+[ Amount ]
+[ Withdraw ]
 
-### Making a Progressive Web App
+Request loan
+[ Loan amount ]
+[ Loan purpose ]
+[ Request loan ]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+$0.00
 
-### Advanced Configuration
+Features:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deposit money (with currency conversion)
+Withdraw money
+Request a loan with purpose
+Display current balance
