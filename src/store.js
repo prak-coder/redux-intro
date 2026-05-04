@@ -1,28 +1,10 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import reducerAccount from "./features/accounts/accountSlice";
 import reducerCustomer from "./features/customers/customerSlice";
-import { thunk } from "redux-thunk";
-import { composeWithDevTools } from "@redux-devtools/extension";
-const rootReducer = combineReducers({
-  account: reducerAccount,
-  customer: reducerCustomer,
+const store = configureStore({
+  reducer: {
+    account: reducerAccount,
+    customer: reducerCustomer,
+  },
 });
-
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk)),
-);
-
-// store.dispatch({ type: "account/withdraw", payload: 200 });
-// console.log(store.getState());
-// store.dispatch({
-//   type: "account/requestLoan",
-//   payload: { amount: 1000, purpose: "to buy scooty" },
-// });
-// console.log(store.getState());
-// store.dispatch({ type: "account/payLoan" });
-// console.log(store.getState());
-
-//Action creator functions
-
 export default store;
