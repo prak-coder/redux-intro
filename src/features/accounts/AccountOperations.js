@@ -59,6 +59,7 @@ function AccountOperations() {
             <option value="USD">US Dollar</option>
             <option value="EUR">Euro</option>
             <option value="GBP">British Pound</option>
+            <option value="INR">Indian Rupee</option>
           </select>
 
           <button onClick={handleDeposit} disabled={isLoading}>
