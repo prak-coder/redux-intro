@@ -29,5 +29,5 @@ export function createCustomer(fullName, nationalID) {
   };
 }
 export function updateCustomerName(fullName) {
-  return { type: "customer/updateCustomerName", payload: { fullName } };
+  return { type: "customer/updateCustomerName", payload: fullName };
 }
